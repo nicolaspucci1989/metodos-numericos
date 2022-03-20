@@ -5,6 +5,9 @@ from src.trisection import trisection
 
 
 class Test(TestCase):
+    def test_trisection_throw_error(self):
+        self.assertRaises(Exception, trisection, 2, 4, linear_function, 0.1)
+
     def test_trisection_linear_function(self):
         expected_solution = -0.5
         self.assertEqual(expected_solution, trisection(-1, 1, linear_function, 0.1))
