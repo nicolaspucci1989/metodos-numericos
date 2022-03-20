@@ -10,22 +10,25 @@ def trisection(a, b, f, e):
         if (i % 2) == 0:
             c = (2 * a + b) / 3
             d = (a + 2 * b) / 3
-            if f(c) == 0:
+            fc = f(c)
+            fd = f(d)
+            if fc == 0:
                 return c
-            elif f(d) == 0:
+            elif fd == 0:
                 return d
-            elif sign(f(a)) * sign(f(c)) < 0:
+            elif sign(f(a)) * sign(fc) < 0:
                 b = c
-            elif sign(f(c)) * sign(f(d)) < 0:
+            elif sign(fc) * sign(fd) < 0:
                 a = c
                 b = d
             else:
                 a = d
         else:
             c = (a + b) / 2
-            if f(c) == 0:
+            fc = f(c)
+            if fc == 0:
                 return c
-            elif sign(f(c)) * sign(f(a)) < 0:
+            elif sign(fc) * sign(f(a)) < 0:
                 b = c
             else:
                 a = c
