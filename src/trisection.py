@@ -35,4 +35,4 @@ def trisection(a, b, f, e):
                 a = c
         i += 1
 
-    return (a + b) / 2
+    return a
