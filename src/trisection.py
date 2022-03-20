@@ -12,13 +12,14 @@ def trisection(a, b, f, e):
             d = (a + 2 * b) / 3
             fc = f(c)
             fd = f(d)
+            sign_fc = sign(fc)
             if fc == 0:
                 return c
             elif fd == 0:
                 return d
-            elif sign(f(a)) * sign(fc) < 0:
+            elif sign(f(a)) * sign_fc < 0:
                 b = c
-            elif sign(fc) * sign(fd) < 0:
+            elif sign_fc * sign(fd) < 0:
                 a = c
                 b = d
             else:
