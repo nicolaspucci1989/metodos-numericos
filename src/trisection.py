@@ -26,9 +26,9 @@ def trisection(a, b, f, e):
                 return c
             elif fd == 0:
                 return d
-            elif sign(f(a)) * sign_fc < 0:
+            elif sign(f(a)) != sign_fc:
                 b = c
-            elif sign_fc * sign(fd) < 0:
+            elif sign_fc != sign(fd):
                 a = c
                 b = d
             else:
@@ -38,7 +38,7 @@ def trisection(a, b, f, e):
             fc = f(c)
             if fc == 0:
                 return c
-            elif sign(fc) * sign(f(a)) < 0:
+            elif sign(fc) != sign(f(a)):
                 b = c
             else:
                 a = c
