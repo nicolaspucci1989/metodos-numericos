@@ -8,7 +8,7 @@ def my_print(i, a, b):
 def trisection(a, b, f, e):
     if sign(f(a)) == sign(f(b)):
         raise Exception('Invalid input')
-    elif e > b - a:
+    elif b - a <= e:
         raise Exception('e must be smaller than the difference between a and b')
 
     print('\n')
