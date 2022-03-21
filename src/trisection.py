@@ -11,10 +11,12 @@ def trisection(a, b, f, e):
     elif e > b - a:
         raise Exception('e must be smaller than the difference between a and b')
 
-    steps = int(ceil(log2(abs(b - a) / e))) + 1
-    i = 1
     print('\n')
     my_print('Index', 'a', 'b')
+
+    steps = int(ceil(log2(abs(b - a) / e))) + 1
+    i = 1
+
     while b - a >= e or i <= steps:
         if (i % 2) == 0:
             c = (2 * a + b) / 3
@@ -23,8 +25,10 @@ def trisection(a, b, f, e):
             fd = f(d)
             sign_fc = sign(fc)
             if fc == 0:
+                my_print(i, a, b)
                 return c
             elif fd == 0:
+                my_print(i, a, b)
                 return d
             elif sign(f(a)) != sign_fc:
                 b = c
@@ -37,14 +41,13 @@ def trisection(a, b, f, e):
             c = (a + b) / 2
             fc = f(c)
             if fc == 0:
+                my_print(i, a, b)
                 return c
             elif sign(fc) != sign(f(a)):
                 b = c
             else:
                 a = c
-
         my_print(i, a, b)
         i += 1
 
-    my_print(i, a, b)
     return a
